@@ -38,3 +38,16 @@ class Response(models.Model):
             if self.parent_question.is_text_question:
                 raise ValidationError("The parent question doesn't have responses")
         super(Response, self).save(*args, **kwargs)
+
+
+class MessageBot(models.Model):
+    """ Clase que almacena los mensajes enviados y contestados """
+    message_id = models.PositiveIntegerField(primary_key=True)
+    message = models.CharField(max_length=220, null=False, blank=False)
+    chat_id = models.CharField(max_length=220, null=False, blank=False)
+    from_id = models.CharField(max_length=220, null=False, blank=False)
+    first_name = models.CharField(max_length=220, null=False, blank=False)
+    last_name = models.CharField(max_length=220, null=False, blank=False)
+
+    def __str__(self):
+        return self.message
