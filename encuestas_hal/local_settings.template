@@ -18,3 +18,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# BotFather credentials
+TOKEN = <TOKEN>
+URL = 'https://api.telegram.org/bot{}'.format(TOKEN)
+CHAT_ID = <CHAT_ID>
+
+# Bot ID
+BOT_ID = <BOT_ID>
