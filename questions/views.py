@@ -1,10 +1,7 @@
 from django.views.generic import View
 from django.http import HttpResponse
 from django.shortcuts import render
-# RestFramework
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+# Bot Credentials
 from encuestas_hal.local_settings import TOKEN, URL, CHAT_ID, BOT_ID
 # Models
 from .models import *
