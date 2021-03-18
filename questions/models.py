@@ -6,7 +6,6 @@ from django.core.exceptions import ValidationError
 class Question(models.Model):
     """ Clase que define los atributus del modelo pregunta del bot """
     question = models.CharField(max_length=220, null=False, blank=False)
-    context = models.CharField(max_length=220, null=False, blank=False)
     is_text_question = models.BooleanField(default=False)
     next_question = models.ForeignKey('self', related_name='NextQuestion', null=True, blank=True, on_delete=models.PROTECT)
     is_first_question = models.BooleanField(default=False)
@@ -27,7 +26,6 @@ class Question(models.Model):
 class Response(models.Model):
     """ Clase que define los atributus del modelo respuesta del bot """
     response = models.CharField(max_length=220, null=False, blank=False)
-    context = models.CharField(max_length=220, null=False, blank=False)
     parent_question = models.ForeignKey('Question', related_name='ParentResponseQuestion', null=True, blank=True, on_delete=models.PROTECT)
     next_question = models.ForeignKey('Question', related_name='NextResponseQuestion', null=True, blank=True, on_delete=models.PROTECT)
     updated_at = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)

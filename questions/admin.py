@@ -14,5 +14,6 @@ class ResponseAdmin(admin.ModelAdmin):
 
 @admin.register(MessageBot)
 class MessageBotAdmin(admin.ModelAdmin):
-    list_display = ('message_id', 'message', 'reply_to_message_id', 'from_id', 'chat_id',)
-    search_fields = ('message_id', 'from_id', 'chat_id',)
+    readonly_fields = ('created_at', )
+    list_display = ('message_id', 'message', 'reply_to_message_id', 'from_id', 'chat_id', 'created_at', )
+    search_fields = ('message_id', 'from_id', 'chat_id', )

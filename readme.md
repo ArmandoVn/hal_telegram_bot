@@ -65,6 +65,58 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+## Uso
+
+1.- Ingresar al admin de Django para poder comenzar a crear las preguntas:
+
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal1.png?raw=true)
+
+2.- Dentro del admin obervaremos todos los modelos disponibles:
+
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal2.png?raw=true)
+
+### Preguntas (Question):
+
+Para poder crear una nueva pregunta, seleccionamos el modelo Questions y en la
+parte superior derecha damos click en el boton "ADD QUESTION", nos desplagara
+el siguiente formulario:
+
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal3.png?raw=true)
+
+El campo "Question" indica la pregunta a mostrar al usuario.
+
+El campo "Is text question", si se palomea indica que la pregunta es abierta,
+si no indica que es de opción multiple.
+
+El campo "Next question" indica la siguiente pregunta. Not: Este dato solo se
+almacena si el campo anterior se encuentra palomeado.
+
+El campo "Is first question" si se palomea indica que esta es la primer
+pregunta del formulario. Solo una pregunta inicial por formulario.
+
+### Respuestas (Response):
+
+Para poder crear una nueva respuesta, seleccionamos el modelo Responses y en la
+parte superior derecha damos click en el boton "ADD RESPONSE", nos desplagara
+el siguiente formulario:
+
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal4.png?raw=true)
+
+El campo "Response" almacena la respuesta mostrada al usuario.
+
+El campo "Parent question" indica en que respuesta debera mostrarse esta
+pregunta. Importante: No se realizara la relacion si la pregunta seleccionada
+es un pregunta abierta.
+
+El campo "Next question" indica que pregunta sigue si el usuario selecciona
+esta respuesta.
+
+### Mensajes Enviados (MessagesBot):
+
+El sistema realiza el registro automatico de la actividad.
+
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal5.png?raw=true)
+
 # Referencias y guias de consulta:
 Python Telegram Bot (python-telegram-bot):
 https://python-telegram-bot.readthedocs.io/en/stable/telegram.chat.html
