@@ -16,8 +16,8 @@ class Question(models.Model):
         return self.question
 
     def save(self, *args, **kwargs):
-        if not self.is_text_question:
-            self.next_question = None
+        self.next_question = self.next_question if self.is_text_question else None
+        self.is_first_question = self.is_first_question if not Question.objects.filter(is_first_question=True).exists() else False
         super(Question, self).save(*args, **kwargs)
 
     class Meta:
@@ -35,9 +35,8 @@ class Response(models.Model):
         return self.response
 
     def save(self, *args, **kwargs):
-        if self.parent_question:
-            if self.parent_question.is_text_question:
-                raise ValidationError("The parent question doesn't have responses")
+        if self.parent_question and self.parent_question.is_text_question:
+                raise ValidationError("Parent question doesn't have responses")
         super(Response, self).save(*args, **kwargs)
 
     class Meta:
