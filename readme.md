@@ -69,11 +69,11 @@ python manage.py runserver
 
 1.- Ingresar al admin de Django para poder comenzar a crear las preguntas:
 
-![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal1.png?raw=true)
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/static/img/capturas_readme/hal1.png?raw=true)
 
 2.- Dentro del admin obervaremos todos los modelos disponibles:
 
-![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal2.png?raw=true)
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/static/img/capturas_readme/hal2.png?raw=true)
 
 ### Preguntas (Question):
 
@@ -81,7 +81,7 @@ Para poder crear una nueva pregunta, seleccionamos el modelo Questions y en la
 parte superior derecha damos click en el boton "ADD QUESTION", nos desplagara
 el siguiente formulario:
 
-![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal3.png?raw=true)
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/static/img/capturas_readme/hal3.png?raw=true)
 
 El campo "Question" indica la pregunta a mostrar al usuario.
 
@@ -100,7 +100,7 @@ Para poder crear una nueva respuesta, seleccionamos el modelo Responses y en la
 parte superior derecha damos click en el boton "ADD RESPONSE", nos desplagara
 el siguiente formulario:
 
-![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal4.png?raw=true)
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/static/img/capturas_readme/hal4.png?raw=true)
 
 El campo "Response" almacena la respuesta mostrada al usuario.
 
@@ -115,7 +115,7 @@ esta respuesta.
 
 El sistema realiza el registro automatico de la actividad.
 
-![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/hal5.png?raw=true)
+![alt text](https://github.com/ArmandoVn/hal_telegram_bot/blob/master/static/img/capturas_readme/hal5.png?raw=true)
 
 # Referencias y guias de consulta:
 Python Telegram Bot (python-telegram-bot):
