@@ -32,10 +32,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # RestFramweork
-    'rest_framework',
-    'corsheaders',
-
     # Local apps
     'questions',
 ]
@@ -103,14 +99,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-# CORS Configuration
-# https://github.com/adamchainz/django-cors-headers
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-]
 
 
 # Static files (CSS, JavaScript, Images)
