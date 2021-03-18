@@ -9,6 +9,8 @@ Telegram.
 Las interacciones del usuario con el bot son trackeadas para posteriormente
 poder hacer un analisis de los datos y sacar conclusiones.
 
+Version de python: 3.9.2
+
 ## Instalación
 
 IMPORTANTE: Para poder realizar el envio de mensajes con Telegram es importante
