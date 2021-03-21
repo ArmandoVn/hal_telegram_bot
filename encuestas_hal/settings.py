@@ -10,11 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import environ
 from pathlib import Path
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env('SECRET_KEY')
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env('DEBUG')
+
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / env('DB_NAME'),
+    }
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -106,12 +126,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static_files'
 
+# BotFather credentials
+TOKEN = env('TOKEN')
+URL = 'https://api.telegram.org/bot{}'.format(TOKEN)
+CHAT_ID = env('CHAT_ID')
 
-try:
-    from .local_settings import *
-except ImportError:
-    print(
-        "Missing local settings. Please check out local_settings.template\
-        and adjust it according to your system."
-    )
-    exit()
+# Bot ID
+BOT_ID = env('BOT_ID')
+
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     print(
+#         "Missing local settings. Please check out local_settings.template\
+#         and adjust it according to your system."
+#     )
+#     exit()

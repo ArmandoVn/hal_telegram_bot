@@ -2,7 +2,7 @@ from django.views.generic import View
 from django.http import HttpResponse
 from django.shortcuts import render
 # Bot Credentials
-from encuestas_hal.local_settings import TOKEN, URL, CHAT_ID, BOT_ID
+from encuestas_hal.settings import TOKEN, URL, CHAT_ID, BOT_ID
 # Models
 from .models import *
 # Logger
