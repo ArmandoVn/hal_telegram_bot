@@ -10,17 +10,21 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import os
+import environ
 from pathlib import Path
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = env('DEBUG')
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -28,7 +32,7 @@ DEBUG = os.environ.get('DEBUG')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / os.environ.get('DB_NAME'),
+        'NAME': BASE_DIR / env('DB_NAME'),
     }
 }
 
@@ -123,12 +127,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static_files'
 
 # BotFather credentials
-TOKEN = os.environ.get('TOKEN')
+TOKEN = env('TOKEN')
 URL = 'https://api.telegram.org/bot{}'.format(TOKEN)
-CHAT_ID = os.environ.get('CHAT_ID')
+CHAT_ID = env('CHAT_ID')
 
 # Bot ID
-BOT_ID = os.environ.get('BOT_ID')
+BOT_ID = env('BOT_ID')
 
 # try:
 #     from .local_settings import *
