@@ -1,0 +1,19 @@
+Pasos que tuve que seguir para construir el sistemita:
+# Lunes de 00:30 - 2:30
+1.- Lo primero que hice fue investigar como implementar bots en telegram.
+2.- De ahí pase a como crear el bot
+3.- Una vez entendi como crearlo procedi a explorar las diferentes estructuras de datos que maneja Telegram.
+5.- Despues de entender los modelos basicos que maneja pase a explorar los endpoints principales para realizar la conexion. 
+4.- Procedi a realizar el primer envio de mensaje del bot
+5.- Una vez realice el mensaje define el modelo de base de datos para crear y almacenar los mensajes que interactuarian con el bot.
+
+# Martes de 10:30 - 13:00
+6.- Despues de haber realizado el primer envio de mensajes decidi buscar implementaciones mejor diseñadas para poder realizar la comunicacion con el api pues realizarlo con los endpoints basicos estaba resultando un poco tedioso, mi opcion fue python-telegram-bot por que mostraba una implementacion sencilla que era lo que buscabamos.
+
+# Martes de 16:00 - 01:30
+7.- Instale el modulo de python y realice la configuracion inicial.
+8.- El primer y mayor problema que tuve fue poder contestar las respuestas ya cargadas pues neceitaba tener un historial cargado de la pregunta anterior para poder tener un contexto de la conversacion y poder dar una respuesta correcta, cuando hice las pruebas con el API basica definida en la pagina de telegram me percate que el metodo getUpdates regresaba un json con todos los mensajes anteriores pero cuando realice la integracion con el python-telegram-bot no entendia porque este json no se regresaba, en este problema fue en el que tarde varias horas.
+9.- Cuando por fin comprendí que era un problema de configuracion inicial del bot todo se pinto de color rosa y preferi almacenar todos los mensajes despues de enviarlos.
+10.- Una vez almacenaba los mensjaes ya podia realizar el algoritmo para obtener la respuesta anterior de ese chat y ese usuario e identificar la respuesta a dar.
+11.- Configure el admin de django para poder realizar las busquedas de manera mas sencilla.
+12.- Hice el deploy en pythonEnywhere pero tuve un error y esta relacionado con el uso de hilos multiples no soportado por este servidor.
